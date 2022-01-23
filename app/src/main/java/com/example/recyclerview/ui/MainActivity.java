@@ -18,8 +18,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements Onclick {
 
     private List<Produto> produtoList = new ArrayList<>();
-    AdapterProduto adapterProduto;
-    RecyclerView rvProdutos;
+    private AdapterProduto adapterProduto;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,22 +27,27 @@ public class MainActivity extends AppCompatActivity implements Onclick {
         setContentView(R.layout.activity_main);
 
 
-        iniciarComponentes();
-        iniciarRecyclerView();
+        iniciarComponentes(); // iniciando o findView no onCreate
+        iniciarRecyclerView(); // iniciando o RecyclerView no onCreate
 
     }
 
     private void iniciarComponentes() {
-        rvProdutos = findViewById(R.id.recyclerView_produtos);
+        recyclerView = findViewById(R.id.recyclerView_produtos);
     }
 
 
     private void iniciarRecyclerView(){
-        produtoList = new DataSource().produtoList();
-        rvProdutos.setLayoutManager(new LinearLayoutManager(this ));
-        rvProdutos.setHasFixedSize(true);
-        adapterProduto = new AdapterProduto(produtoList, this);
-        rvProdutos.setAdapter(adapterProduto);
+        produtoList = new DataSource().produtoList(); // Iniciando a lista antes do RecyclerView
+
+        // Configurando o RecyclerView a forma de exibição
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        // recycler vai pegar um LayoutManager e recebe um novo tipo de exibição -> LinearLayout nessa classe (this )
+        recyclerView.setHasFixedSize(true); // melhorar a perfomace do recyclerView
+
+        // Configurando o Adapter
+        adapterProduto = new AdapterProduto(produtoList,this);
+        recyclerView.setAdapter(adapterProduto);
     }
 
 

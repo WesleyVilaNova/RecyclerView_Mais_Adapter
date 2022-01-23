@@ -6,6 +6,8 @@ public class Produto {
     private String subText;
     private Double valor;
 
+
+
     public String getNome() {
         return nome;
     }

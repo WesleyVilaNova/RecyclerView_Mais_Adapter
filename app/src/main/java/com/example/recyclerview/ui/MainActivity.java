@@ -11,6 +11,8 @@ import com.example.recyclerview.R;
 import com.example.recyclerview.interfaces.Onclick;
 import com.example.recyclerview.models.Produto;
 import com.example.recyclerview.repository.DataSource;
+import com.tsuryo.swipeablerv.SwipeLeftRightCallback;
+import com.tsuryo.swipeablerv.SwipeableRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements Onclick {
 
     private List<Produto> produtoList = new ArrayList<>();
     private AdapterProduto adapterProduto;
-    private RecyclerView recyclerView;
+    private SwipeableRecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,22 @@ public class MainActivity extends AppCompatActivity implements Onclick {
         // Configurando o Adapter
         adapterProduto = new AdapterProduto(produtoList,this);
         recyclerView.setAdapter(adapterProduto);
+
+        recyclerView.setListener(new SwipeLeftRightCallback.Listener() {
+            @Override
+            public void onSwipedLeft(int position) {
+               /* mList.remove(position);
+                mAdapter.notifyDataSetChanged();*/
+            }
+
+            @Override
+            public void onSwipedRight(int position) {
+                produtoList.remove(position);
+                adapterProduto.notifyItemRemoved(position);
+                /*mList.remove(position);
+                mAdapter.notifyDataSetChanged();*/
+            }
+        });
     }
 
 

@@ -7,11 +7,15 @@
     android:background="#E800190E"
     tools:context=".ui.MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <com.tsuryo.swipeablerv.SwipeableRecyclerView
         android:id="@+id/recyclerView_produtos"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/item_produtos"
+        app:leftBgColor="@color/white"
+        app:leftImage="@drawable/ic_remove"
+        app:rightBgColor="@color/teal_700"
+        app:rightImage="@drawable/ic_edit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

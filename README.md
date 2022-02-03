@@ -1,6 +1,6 @@
 # Trabalhando com RecyclerView + Adapter
 
-### Vídeo no Linkedin :https://www.linkedin.com/feed/update/urn:li:activity:6890052789457014784/?commentUrn=urn%3Ali%3Acomment%3A(ugcPost%3A6890052782460923904%2C6894704241135755264)
+### Vídeo no Linkedin :https://www.linkedin.com/posts/wesley-vila-nova_trabalhando-com-recyclerview-adapter-cardview-activity-6890052789457014784-3ROl
 ### Sempre mantendo o código limpo e organizado. Foi criado pasta específicas conforme foi aprendido sobre MVVM. 
 ### Melhorando assim a organização do projeto, fácil compreensão, e código limpo para outros desenvolvedores.
 ### Este projeto também conta com o click de exclusão no reclycerView utilizando o Swip.

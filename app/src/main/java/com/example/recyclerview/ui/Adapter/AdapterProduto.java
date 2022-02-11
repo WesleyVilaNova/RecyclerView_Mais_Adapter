@@ -1,10 +1,9 @@
-package com.example.recyclerview.Adapter;
+package com.example.recyclerview.ui.Adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.recyclerview.R;
 import com.example.recyclerview.interfaces.Onclick;
 import com.example.recyclerview.models.Produto;
-import com.example.recyclerview.ui.MainActivity;
 
 import java.util.List;
 
@@ -23,6 +21,7 @@ public class AdapterProduto extends RecyclerView.Adapter<AdapterProduto.MyViewHo
 
     public AdapterProduto(List<Produto> produtoListaConstrutor,Onclick onclick) {
         this.produtoList = produtoListaConstrutor;
+        this.onclick = onclick;
     }
 
     @NonNull
